@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="/website/css/uicons-outline-rounded.css" rel="stylesheet">
+        <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'poppins', sans-serif;
+        }
+        /* ul .nav{
+            z-index: 10000;
+        } */
+        nav{
+            background: #0082e6;
+            height: 80px;
+            width: 100%;
+            overflow: hidden;
+  /* background-color: #333; */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+        }
+        .logo{
+            color: #fff;
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
+        nav ul{
+            float: right;
+            margin-right: 20px;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        nav ul li a{
+            color: #fff;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .nav a.active,nav a:hover{
+            background: #1b9bff;
+            transition: .5s;
+        }
+        .checkbtn{
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            cursor: pointer;
+            display: none;
+        }
+        #check{
+            display: none;
+        }
+
+        @media (max-width:952px){
+            label.logo{
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a{
+                font-size: 16px;
+               
+            }
+        }
+        @media (max-width:952px){
+            .checkbtn{
+                display: block;
+            }
+           nav  ul{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: black;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all 0.5s;
+            }
+            nav ul li{
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a{
+                font-size: 20px;
+            }
+            .t:hover,a.active{
+                background: none;
+                color: #0082e6;
+            }
+            #check:checked ~ ul{
+                left: 0;
+
+            }
+        }
+    
+        /* For Slider  */
+        #slider{
+            position: relative;
+            overflow: hidden;
+            z-index: -1;
+            margin-top: 50px;
+        }
+        #slider figure{
+            position: relative;
+            width: 500%;
+            margin: 0;
+            left: 0;
+            animation: 20s slider infinite;
+        }
+        #slider img{
+            width: 20%;
+            float: left;
+        }
+        @keyframes slider{
+            0%{
+                left: 0;
+            }
+            20%{
+                left: 0;
+            }
+            25%{
+                left: -100%;
+            }
+            45%{
+                left: -100%;
+            }
+            50%{
+                left: -200%;
+            }
+            70%{
+                left: -200%;
+            }
+            75%{
+                left: -300%;
+            }
+            95%{
+                left: -300%;
+            }
+            100%{
+                left: 0;
+            }
+        }
+        /* .main{
+            z-index: -3;
+        } */
+    
+    /* For footer */
+        .container{
+            max-width: 1170px;
+            margin: auto;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 100px;
+        }
+        ul{
+            list-style: none;
+        }
+        .footer{
+            background: #24262b;
+            padding: 70px 0;
+        }
+        .footer-col{
+            width: auto;
+    padding: 20px;
+    }
+        .footer-col h4{
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+        .footer-col h4::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a{
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+            color: #ffffff;
+            padding: 8px;
+        }
+        .footer-col .social-links a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin: 0 10px 10px 0px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transform: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover{
+            color: #24262b;
+            background-color: #fff;
+        }
+        /* responsive */
+        @media(max-width:767px){
+            .footer{
+                position: relative
+            }
+            .footer-col ul li a {
+             font-size: 16px;
+              text-transform: capitalize;
+                  color: #ffffff;
+                 text-decoration: none;
+                   font-weight: 300;
+    
+                      display: block;
+                       transition: all 0.3s ease;
+            }
+            .footer-col{
+                /* width: 50%; */
+                margin-bottom: 30px;
+            }
+        }
+        @media(max-width:574px){
+            .footer{
+                position: relative
+            }
+            .footer-col ul li a {
+             font-size: 16px;
+              text-transform: capitalize;
+                  color: #ffffff;
+                 text-decoration: none;
+                   font-weight: 300;
+    
+                      display: block;
+                       transition: all 0.3s ease;
+            }
+            .footer-col{
+                /* width: 50%; */
+                margin-bottom: 30px;
+            }
+        }
+        #dark{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }    
+        /* video */
+        
+        .video{
+            position: relative;
+            margin-left: 150px;
+        }
+        .video iframe{
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .video h1{
+            margin-left: 420px;
+            margin-top: 10px;
+            background-color: #369eee;
+            width: 300px;
+            text-transform: uppercase;
+        }
+        @media(max-width:957px){
+            .video h1{
+            margin-left: 150px;
+            margin-top: 10px; 
+        }
+        }
+        @media(max-width:574px){
+            .video h1{
+            margin-left: 50px;
+            margin-top: 10px; 
+        }
+        }
+        @media(max-width:480px){
+            .video h1{
+            margin-left: -50px;    
+            margin-top: 10px; 
+            font-size: 20px;
+            width: 200px;
+        }
+        .video iframe{
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-left: -120px;
+        }
+        iframe{
+            width: 300px;
+            height: 350px;
+        }
+        }
+        
+
+        /* card */
+        .container1{
+            background: #16384c;
+            position: relative;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+        .container1 .card{
+            position: relative;
+            max-width: 300px;
+            height: 215px;
+            background: #fff;
+            margin: 30px 10px;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            transition: 0.3s ease-in-out;
+        }
+        .container1 .card:hover{
+            height: 420px;
+        }
+        .container1 .card .imgbx{
+            position: relative;
+            width: 260px;
+            height: 260px;
+            top: -60px;
+            left: 20px;
+            /* z-index: 1; */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+        }
+        .container1 .card.imgbx img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+        .container1 .card .content{
+            position: relative;
+            margin-top: -140px;
+            padding: 10px 15px;
+            color: #111;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3 ease-in-out;
+        }
+        .container1 .card:hover .content{
+            visibility: visible;
+            opacity: 1;
+            margin-top: -40px;
+            transition-delay: 0.3s;
+        }
+        .new h1{
+            background: #16384c;
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1b9bff;
+        }
+        .container2{
+            display: flex;
+            width: 1000px;
+            gap: 50px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .container2 .box{
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background: #000;
+            box-shadow: 0 30px 30px rgba(0.0,0,0.5);
+        }
+        .container2 .box .imgbx{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .container2 .box .imgbx img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .container2 .box:hover .imgbx img{
+            opacity: 0;
+        }
+        .container2 .box .content{
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+            width: 80%;
+            height: 60px;
+            background: #fff;
+            transition: 0.5s;
+            overflow: hidden;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .container2 .box:hover .content{
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        .container2 .box .content h3{
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        .container2 .box .content p{
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            line-height: 1.2em;
+            transition: 0.5s;
+            text-align: justify;
+        }
+        .container2 .box:hover .content p{
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+        .come{
+            height: 50px;
+            background: #1b9bff;
+        }
+        .come h1{
+            color: white;
+            /* background: #1b9bff; */
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .to{
+            width: 100px;
+            height: 100px;
+        }
+
+     .darkmode{
+        background-color: rgb(19, 19, 19);
+        color: rgb(245, 245, 245);
+        transition: 0.7s;
+     }
+    </style>
+    </head>
+    <body>
+        <!-- https://rachnapant199.github.io/watch_project/contact.html#video -->
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <img class="to" src="images/logo-removebg-preview.png" alt="">
+            <ul class="nav">
+                
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="categories.html">categories</a></li>
+                <li><a href="gallery.html">Image gallery</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </nav>
+        
+            <div id="slider">
+                <figure>
+                    <img
+                        src="https://cdn.anscommerce.com/catalog/brandstore/johnson/17_7_20/Sale.jpg"
+                        width="500px" height="500px" alt="">
+                    <img
+                        src="https://img.joomcdn.net/617d196ddc6a1d2f68333b3e3addf205f16902cb_original.jpeg"
+                        width="500px" height="500px" alt="">
+                    <img
+                        src="https://navbharattimes.indiatimes.com/photo/msid-86859685,imgsize-70402/pic.jpg"
+                        width="500px" height="500px" alt="">
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/xtend-FI-black_03_1500x.jpg?v=1673003103"
+                        width="500px" height="500px" alt="">
+                </figure>
+            </div>
+
+            <div class="video">
+                <h1>Find your style</h1>
+            <iframe width="90%" height="700" src="https://www.youtube.com/embed/A85hf8DcJCs" title="3D Watch Animation - Maen Hudson Automatic 39mm by Blade Render" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+
+
+            <div class="new">
+            <h1>New features</h1>
+            </div>
+            <div class="container1">
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="https://cdn.shopify.com/s/files/1/0467/6786/6013/products/K74CB001.png?v=1615108317"
+                        width="200px" height="200px" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>ROLEX</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus placeat voluptates molestias reprehenderit sit expedita ut fugit, architecto quo iste esse, dolore praesentium laboriosam in itaque velit modi mollitia! Culpa.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="http://cdn.shopify.com/s/files/1/0057/8938/4802/products/3-2.png?v=1653637007" width="200px" height="200px"   alt="">
+                    </div>
+                    <div class="content">
+                        <h2>TITAN</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus placeat voluptates molestias reprehenderit sit expedita ut fugit, architecto quo iste esse, dolore praesentium laboriosam in itaque velit modi mollitia! Culpa.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="" width="200px" height="200px" alt="">
+                    </div>
+                    <div class="content">
+                        <h2>ROYAL</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus placeat voluptates molestias reprehenderit sit expedita ut fugit, architecto quo iste esse, dolore praesentium laboriosam in itaque velit modi mollitia! Culpa.</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="come">
+                <h1>coming soon.....</h1>
+            </div>
+
+            <div class="body">
+            <div class="container2">
+                <div class="box">
+                    <div class="imgbx">
+                        <img src="https://rukminim1.flixcart.com/image/612/612/k7usyvk0/watch/t/n/h/bu2026-65h-vs-citizen-original-imafqyecxgst7zaz.jpeg?q=70" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>CITIZEN</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quibusdam at molestiae iure temporibus nihil incidunt fugit quis quidem! Rerum vero dolore veniam sunt numquam beatae assumenda fugit repellendus vel?
+                        Omnis neque provident consequuntur illum labore accusantium culpa aperiam eius eaque necessitatibus officia fugiat iusto rerum minima, ipsa maiores commodi eveniet dolores tenetur reprehenderit fugit! Nemo aliquid quaerat nobis incidunt!
+                        Enim, a omnis error cumque fugit rem provident incidunt quae odit labore laborum unde.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgbx">
+                        <img src="https://rukminim1.flixcart.com/image/612/612/l5cslu80/watch/c/k/n/3-best-designer-pink-butterfly-heart-bracelet-combo-white-stone-original-imaggfxbkecxzngq.jpeg?q=70" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>WHITE STONE</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quibusdam at molestiae iure temporibus nihil incidunt fugit quis quidem! Rerum vero dolore veniam sunt numquam beatae assumenda fugit repellendus vel?
+                        Omnis neque provident consequuntur illum labore accusantium culpa aperiam eius eaque necessitatibus officia fugiat iusto rerum minima, ipsa maiores commodi eveniet dolores tenetur reprehenderit fugit! Nemo aliquid quaerat nobis incidunt!
+                        Enim, a omnis error cumque fugit rem provident incidunt quae odit labore laborum unde.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgbx">
+                        <img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/1/i/c/1-1696qc06-titan-men-original-imagkfgzxdhz2g5c.jpeg?q=70" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>TITAN</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quibusdam at molestiae iure temporibus nihil incidunt fugit quis quidem! Rerum vero dolore veniam sunt numquam beatae assumenda fugit repellendus vel?
+                        Omnis neque provident consequuntur illum labore accusantium culpa aperiam eius eaque necessitatibus officia fugiat iusto rerum minima, ipsa maiores commodi eveniet dolores tenetur reprehenderit fugit! Nemo aliquid quaerat nobis incidunt!
+                        Enim, a omnis error cumque fugit rem provident incidunt quae odit labore laborum unde.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col">
+                            <h4>company</h4>
+                            <ul>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                                <li><a href="#">Affiliate program</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Get help</h4>
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Shipping</a></li>
+                                <li><a href="#">returns</a></li>
+                                <li><a href="#">Order status</a></li>
+                                <li><a href="#">Payment options</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Online shop</h4>
+                            <ul>
+                                <li><a href="#">watch</a></li>
+                                <li><a href="#">Titan</a></li>
+                                <li><a href="#">Rolex</a></li>
+                                <li><a href="#">Arguably</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Follow us</h4>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a
+                                    href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/login"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+
+
+        <script>
+
+let mode = document.getElementById("dark")
+console.log(mode)
+
+mode.addEventListener("click",()=>{
+    document.body.classList.toggle("darkmode")
+})
+
+
+
+</script>
+    </body>
+</html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="/website/css/uicons-outline-rounded.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgb(255, 246, 197);
+            /* padding: 10px;
+            margin-top: 100px; */
+        }
+        #dark{
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        /* Nav bar */
+        nav{
+            background: #0082e6;
+            height: 80px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .logo{
+            color: #fff;
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
+        nav ul{
+            float: right;
+            margin-right: 20px;
+        }
+        nav ul li{
+            text-decoration: none;
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        nav ul li a{
+            color: #fff;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .nav a.active,nav a:hover{
+            background: #1b9bff;
+            transition: .5s;
+        }
+        .checkbtn{
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            cursor: pointer;
+            display: none;
+        }
+        #check{
+            display: none;
+        }
+
+        @media (max-width:952px){
+            label.logo{
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a{
+                font-size: 16px;
+               
+            }
+        }
+        @media (max-width:952px){
+            .checkbtn{
+                display: block;
+            }
+           nav  ul{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: black;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all 0.5s;
+            }
+            nav ul li{
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a{
+                font-size: 20px;
+            }
+            .t:hover,a.active{
+                background: none;
+                color: #0082e6;
+            }
+            #check:checked ~ ul{
+                left: 0;
+
+            }
+        }
+        
+
+     .darkmode{
+        background-color: rgb(19, 19, 19);
+        color: rgb(245, 245, 245);
+        transition: 0.7s;
+     }
+     /* For footer */
+     footer{
+        margin-top: 70px;
+     }
+     .container{
+            max-width: 1170px;
+            margin: auto;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 100px;
+        }
+        ul{
+            list-style: none;
+        }
+        .footer{
+            background: #24262b;
+            padding: 70px 0;
+        }
+        .footer-col{
+            width: auto;
+            padding: 20px;
+    }
+        .footer-col h4{
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+        .footer-col h4::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a{
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+            color: #ffffff;
+            padding: 8px;
+        }
+        .footer-col .social-links a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin: 0 10px 10px 0px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transform: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover{
+            color: #24262b;
+            background-color: #fff;
+        }
+        /* responsive */
+        @media(max-width:767px){
+            .footer{
+                position: relative
+            }
+            .footer-col ul li a {
+             font-size: 16px;
+              text-transform: capitalize;
+                  color: #ffffff;
+                 text-decoration: none;
+                   font-weight: 300;
+    
+                      display: block;
+                       transition: all 0.3s ease;
+            }
+            .footer-col{
+                /* width: 50%; */
+                margin-bottom: 30px;
+            }
+        }
+        @media(max-width:574px){
+            .footer{
+                position: relative
+            }
+            .footer-col ul li a {
+             font-size: 16px;
+              text-transform: capitalize;
+                  color: #ffffff;
+                 text-decoration: none;
+                   font-weight: 300;
+    
+                      display: block;
+                       transition: all 0.3s ease;
+            }
+            .footer-col{
+                /* width: 50%; */
+                margin-bottom: 30px;
+            }
+        }
+
+
+
+        /* Product */
+        .body{
+	font-size: 1.7rem;
+	font-family: 'Merriweather Sans', sans-serif;
+	background: #2c3e50;
+	color: #ececec;
+	padding: 4rem;
+}
+
+h2{
+	text-align: center;
+	margin-bottom: 5rem;
+    margin-top: 1rem;
+	font-size: 4rem;
+}
+
+.all-products{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.product{
+	overflow: hidden;
+	background: #ffffff;
+	color: #21201e;
+	text-align: center;
+	width: 240px;
+	height: 400px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1.2rem;
+	margin: 2rem;
+}
+
+.product .product-title, .product .product-price{
+	font-size: 18px;
+}
+
+.product:hover img{
+	scale:  1.1;
+}
+
+.product:hover {
+	box-shadow: 5px 15px 25px #eeeeee;
+}
+
+.product img {
+	height: 200px;
+	margin: 1rem;
+	transition: all 0.3s;
+}
+
+.product a:link, .product a:visited{
+	color: #ececec;
+	display: inline-block;
+	text-decoration: none;
+	background-color: #2c3e50;
+	padding: 1.2rem 3rem;
+	border-radius: 1rem;
+	margin-top: 1rem;
+	font-size: 14px;
+	transition: all 0.2s;
+}
+.product a:hover{
+transform:scale(1.1);
+}
+.to{
+            width: 100px;
+            height: 100px;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </label>
+        <img class="to" src="images/logo-removebg-preview.png" alt="">
+        <ul class="nav">
+            <li><a  href="index.html">Home</a></li>
+            <!-- <li><a href="#">About</a></li> -->
+            <li><a class="active" href="categories.html">categories</a></li>
+            <li><a href="gallery.html">Image gallery</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <img id="dark" src="https://cdn-icons-png.flaticon.com/512/6714/6714978.png" alt="" srcset="">
+        </ul>
+    </nav>
+    
+    <div class="body">
+    <section class="products">
+		<h2>Our Products</h2>
+		<div class="all-products">
+			<div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/k8t3jbk0/watch/q/c/y/nm1696nc01-titan-original-imafqrfkfbzdhwfz.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">TITAN
+					</h4>
+					<p class="product-price">$129</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+			<div class="product">
+				<img src="https://rukminim1.flixcart.com/image/832/832/kzllrbk0/watch/5/q/v/1-ar11449-emporio-armani-women-original-imagbkk9nhjghses.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">EMPORIO ARMANI 
+					</h4>
+					<p class="product-price">$299</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+			<div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/t/x/b/-original-imagj5wzjuye65hu.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">CITIZEN
+					</h4>
+					<p class="product-price">$999</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+			<div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/u/u/p/1-ciwlg2225902-cerruti-women-original-imaggw693z8vdhmx.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">CERRUTI
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/k3vwxow0/watch/9/c/f/srpd61k1samay-seiko-original-imafmx4sdga9vygr.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">SEIKO
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/832/832/jyq5oy80/watch/a/a/u/14531-307-bering-original-imafgwueehtpcy5x.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">BERING
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/7/i/j/-original-imaghkrwkdrxcmpz.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">CASIO
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/o/s/z/01-14531-397-bering-women-original-imagk2e33nvz8yg9.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">BERING
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/r/l/1/1-nq1696kc01-titan-men-original-imagg934jvgn6j73.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">TITAN
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/jw84ya80/watch/7/q/5/ar11203-emporio-armani-original-imafgyagpkqaybcy.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">EMPORIO ARMANI
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/m/q/y/1-dz4587-fossil-men-original-imaggd65vxcnkfrj.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">FOSSIL
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kjn6qvk0-0/watch/o/n/z/pm251-a-peter-minuit-original-imafz64pybh3bnb6.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">PETER MINUIT
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/k7usyvk0/watch/d/z/y/bj7095-56x-vs-citizen-original-imafqyechyyghy65.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">CITIZEN
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kfyasnk0-0/watch/2/b/y/mk6485-michael-kors-original-imafwapw4ahhnvyg.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">MICHAEL KORS
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kk76wsw0/watch/p/d/j/ar2448-emporio-armani-original-imafzh9ry2bmga6a.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">SEIKO
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kw6pw280/watch/h/f/v/1-14539-868-bering-women-original-imag8x22mejjkuxu.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">BERING
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kn4xhu80/watch/t/t/d/dtwgc2019103-ducati-corse-original-imagfvmqhygpfg4c.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">DUCATI CORSE
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/ja73ki80/watch/b/f/h/mk6110i-michael-kors-original-imaezqa4tzrk9pqe.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">MICHAEL KORS
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/p/v/l/-original-imaghm9wtszxmhr9.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">VERSUS VERSACE
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/ku1k4280/watch/y/w/1/1-3030mcbipba-alexandre-christie-men-original-imag79yeyxhvghgn.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">ALEXANDRE CHRISTIE
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kn4xhu80/watch/h/n/u/dtwgo2018806-ducati-corse-original-imagfvmqswtzkrpg.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">DUCATI CORSE
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/9/d/g/1-es5097-fossil-girls-original-imagkkfm5b3sgkyt.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">FOSSIL
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/k5r2mq80/watch/y/h/w/eqb-800db-1adr-casio-original-imaf5seenhbffn99.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">CASIO
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kx3l0nk0/watch/u/z/a/1-gw0118l1-guess-watch-girls-original-imag9mnc43s7g43y.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">GUESS WATCH
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/k4rcmfk0pkrrdj/watch-refurbished/g/3/t/c-1653np02-titan-original-imafnnnrs5xzcjka.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">TITAN
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/klqx30w0/watch/i/t/c/ai7009-89x-citizen-original-imagysv8tzsvhg2g.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">CITIZEN
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/k12go7k0/watch/u/x/q/95047wm01j-titan-original-imafkptnagphfqgb.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">TITAN
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/x/u/q/1-pi42simesibs-nordgreen-men-original-imagjren9cxtfmpz.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">NORDGREEN
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/x/u/q/1-pi42simesibs-nordgreen-men-original-imagjren9cxtfmpz.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">TOMMY HILFIGER
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kn4xhu80/watch/9/z/e/dtwgo2018805-ducati-corse-original-imagfvmqg6pnj84y.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">DUCATI CORSE
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kl2mljk0/watch/e/q/i/ar1907-emporio-armani-original-imaf9fbd6sbvxg3h.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">EMPORIO ARMANI
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/i/n/v/1-pi42simesigs-nordgreen-men-original-imagjreghmbccqkw.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">NORDGREEN
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/jtaed8w0/watch/z/4/r/me3086i-fossil-original-imafed97qmsgycgm.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">FOSSIL
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/w/h/m/1-cra163srb02bk-cerruti-men-original-imaggmttmgh6xavu.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">CERRUTI
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kl2mljk0/watch/y/q/n/ak2130rglp-anne-klein-original-imagya2egsdrhc4g.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">ANNE KLEIN
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/a/g/z/1-srph25k1-seiko-men-original-imaghhxhvvhzghhu.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">SEIKO
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kjn6qvk0-0/watch/q/x/q/pm293-d-peter-minuit-original-imafz634ggpdhxzj.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">PETER MINUIT
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/kn4xhu80/watch/3/6/w/dtwgf2019203-ducati-corse-original-imagfvmqmfvhvbmh.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">DUCATI CORSE
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/9/c/7/1-cq21mb-alg-boys-girls-original-imaghmxjehagh3me.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">ALG
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+            <div class="product">
+				<img src="https://rukminim1.flixcart.com/image/612/612/xif0q/watch/7/w/s/1-es-8179-0b-earnshaw-men-original-imaghxggjbjvf67p.jpeg?q=70">
+				<div class="product-info">
+					<h4 class="product-title">EARNSHAW
+						</h4>
+					<p class="product-price">$629*</p>
+					<a class="product-btn" href="#">Buy Now</a>
+
+				</div>
+			</div>
+		</div>
+	</section>
+    </div>
+
+
+
+        <!-- "https://rukminim1.flixcart.com/image/612/612/k8t3jbk0/watch/q/c/y/nm1696nc01-titan-original-imafqrfkfbzdhwfz.jpeg?q=70 -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">Order status</a></li>
+                        <li><a href="#">Payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">Titan</a></li>
+                        <li><a href="#">Rolex</a></li>
+                        <li><a href="#">Arguably</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D">
+                            <i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/">
+                            <i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/login">
+                            <i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+
+let mode = document.getElementById("dark")
+console.log(mode)
+
+mode.addEventListener("click",()=>{
+    document.body.classList.toggle("darkmode")
+})
+
+
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
